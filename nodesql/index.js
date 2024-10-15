@@ -15,12 +15,33 @@ app.get('/items', (req, res) => {
 })
 
 app.post('/items', (req, res) => {
-    const {name, description} = req.body
+    const { name, description } = req.body
     createItem(name, description, (err, data) => {
         if (err) {
             res.status(500).send(err.message)
         } else {
             res.status(201).send(`Item is added ID : ${data.id}`)
+        }
+    })
+})
+
+app.put('/items/:id', (req, res) => {
+    const { name, description } = req.body
+    updateItem(req.params.id, name, description, (err) => {
+        if (err) {
+            res.status(500).send(err.message)
+        } else {
+            res.status(200).send("Updatet item")
+        }
+    })
+})
+
+app.delete('/items/:id', (req, res) => {
+    deleteItem(req.params.id, (err) => {
+        if (err) {
+            res.status(500).send(err.message)
+        } else {
+            res.status(200).send("Deleted")
         }
     })
 })

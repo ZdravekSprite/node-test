@@ -6,10 +6,10 @@ let db = new sqlite3.Database(dbName, (err) => {
         console.error(err.message)
     } else {
         console.log("Connected to the Database")
-        db.run('CREATETABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINCREMENT, NAME text, DESCRIPTION text)', (err) => {
+        db.run('CREATE TABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINCREMENT, NAME text, DESCRIPTION text)', (err) => {
             if (err) {
                 console.error(err.message)
-            } else { 
+            } else {
                 console.log("Table created or existed")
             }
         })
