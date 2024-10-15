@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+import { Sequelize, DataTypes } from 'sequelize';
 const sequelize = new Sequelize({
     dialect: 'sqlite',
     storage: './database.sqlite'
@@ -16,14 +16,13 @@ async function setupDB() {
             },
         });
         await sequelize.sync({ force: true });
-        await db.Task.create({ text: "Item-1-MertKadirGursoy" });
+        await db.Task.create({ text: "Item-1" });
         await db.Task.create({ text: "Item-2" });
         await db.Task.create({ text: "Item-3" });
     } catch (error) {
         console.error(error);
     }
 }
-
 
 
 // CREATE APIs URL ENDPOINTS TO CREATE AND DELETE TO DO ITEMS
@@ -37,7 +36,6 @@ async function startServer() {
         app.get('/', (req, res) => {
             res.send('hello world')
         })
-
 
 
         // GET METHOD API URL | RETRIEVE ITEMS
@@ -54,7 +52,6 @@ async function startServer() {
                 res.json(t)
             })
         })
-
 
 
         // DELETE METHOD API URL | DELETE ITEM
