@@ -1,5 +1,18 @@
 # node-test
 
+## [https://www.youtube.com/watch?v=cr3pX6fSUpc]
+
+```bash
+cd express-sqlite
+npm init -y
+npm i express
+npm i sqlite3
+npm i
+node server
+npm start
+```
+
+
 ## [https://mertgursoy.medium.com/how-to-create-a-basic-to-do-crud-app-using-vue3-nodejs-expressjs-server-sqlite-vite-03a29509ada4]
 
 ```bash
