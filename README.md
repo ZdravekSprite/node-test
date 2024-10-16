@@ -5,8 +5,7 @@
 ```bash
 cd express-sqlite
 npm init -y
-npm i express
-npm i sqlite3
+npm i express sqlite3 sequelize
 npm i
 node server
 npm start
