@@ -5,12 +5,11 @@
 ```bash
 cd express-sqlite
 npm init -y
-npm i express sqlite3 sequelize
+npm i express sqlite3
 npm i
 node server
 npm start
 ```
-
 
 ## [https://mertgursoy.medium.com/how-to-create-a-basic-to-do-crud-app-using-vue3-nodejs-expressjs-server-sqlite-vite-03a29509ada4]
 
@@ -18,9 +17,9 @@ npm start
 cd TODOLIST
 cd backend
 npm init -y
-npm install express — save
-npm install sequelize — save
-npm install sqlite3 — save
+npm install express
+npm install sequelize
+npm install sqlite3
 npm i
 node server
 ```
