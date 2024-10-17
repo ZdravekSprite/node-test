@@ -1,10 +1,14 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 import { Sequelize, DataTypes } from 'sequelize';
+
 const sequelize = new Sequelize({
     dialect: 'sqlite',
     storage: './database.sqlite'
 })
-var db = {}
 
+var db = {}
 
 // THIS FUNCTION WILL CREATE DUMMY DATA IN DATABASE TABLE
 async function setupDB() {
@@ -24,7 +28,6 @@ async function setupDB() {
     }
 }
 
-
 // CREATE APIs URL ENDPOINTS TO CREATE AND DELETE TO DO ITEMS
 async function startServer() {
     try {
@@ -37,7 +40,6 @@ async function startServer() {
             res.send('hello world')
         })
 
-
         // GET METHOD API URL | RETRIEVE ITEMS
         app.get('/api/tasks', (req, res) => {
             // return all taskls
@@ -45,6 +47,7 @@ async function startServer() {
                 res.json(tasks)
             })
         })
+
         // POST METHOD API URL | CREATE ITEM
         app.post('/api/tasks', (req, res) => {
             // create a task
@@ -52,7 +55,6 @@ async function startServer() {
                 res.json(t)
             })
         })
-
 
         // DELETE METHOD API URL | DELETE ITEM
         app.delete('/api/tasks/:id', (req, res) => {
@@ -68,7 +70,6 @@ async function startServer() {
                 res.sendStatus(500); // Internal Server Error
             });
         });
-
 
         app.listen(port, () => {
             console.log(`App listening on port ${port}`)
